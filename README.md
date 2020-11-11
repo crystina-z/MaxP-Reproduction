@@ -1,7 +1,6 @@
 ## Comparing Score Aggregation Approaches for Pretrained Neural Language Models
 
-This paper contains the code to reproduce the results in the 
-ECIR2020 reproducibility paper: *Comparing Score Aggregation Approaches for Pretrained Neural Language Models.*
+This paper contains the code to reproduce the results in the paper: *Comparing Score Aggregation Approaches for Pretrained Neural Language Models.*
 Note that since we highly rely on the *ad-hoc retrieval framework [capreolus](https://capreolus.ai/)*, 
 the modules in this repo are mostly the extension of the framework (under `./capreolus_extensions`) and do not contain the data processing and training logic.
 Please find the details in the [framework github](https://github.com/capreolus-ir/capreolus) if you are interested in these.
