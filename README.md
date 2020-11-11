@@ -13,8 +13,7 @@ For the config key format and acceptable values, please find more details [here]
 ### Setup
 ```
 # install capreolus
-pip install git+https://github.com/capreolus-ir/capreolus.git@feature/autotokenizer
-pip uninstall h5py && pip install h5py==2.10.0 
+pip install git+https://github.com/capreolus-ir/capreolus.git
 
 # designate the directory under which the cache and results will be stored 
 CAPREOLUS_CACHE=/on/spacious/disk/.capreolus/cache
