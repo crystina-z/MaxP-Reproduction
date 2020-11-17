@@ -12,7 +12,7 @@ For the config key format and acceptable values, please find more details [here]
 ### Setup
 ```
 # install capreolus
-pip install git+https://github.com/capreolus-ir/capreolus.git
+pip install git+https://github.com/capreolus-ir/capreolus.git@d7d2631994dcf56e3920fd5294e1758fd798544b
 
 # designate the directory under which the cache and results will be stored 
 CAPREOLUS_CACHE=/on/spacious/disk/.capreolus/cache
