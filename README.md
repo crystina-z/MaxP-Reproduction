@@ -9,6 +9,9 @@ The hyperparameters are listed under `./optimal_configs/maxp.txt`, with the form
 Feel free to try other settings using this format. Note that lines starting with `#` is considered as comments and will be ignored by the program.
 For the config key format and acceptable values, please find more details [here](https://capreolus.ai/en/latest/quick.html#command-line-interface). 
 
+***Note***: *We realized that there is a bug in our code which will slightly effect the evalution results. The bug is fixed now, but this will cause the replicated results drops around 0.01. We will fix the number in the Tables before getting it published.*
+
+
 ### Setup
 ```
 # install capreolus
