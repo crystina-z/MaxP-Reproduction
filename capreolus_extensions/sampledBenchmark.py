@@ -38,12 +38,12 @@ class SampleMixin:
         return self._unsampled_folds
 
     def build(self):
-        rate = self.config["rate"]
+        mode, rate = self.config["mode"], self.config["rate"]
         self.unsampled_qrel_file = self.qrel_file
         self.unsampled_fold_file = self.fold_file
         if rate < 1:  # else still use the original qrel_file and fold_file as the "sampled" one 
-            self.qrel_file = self.file_fn / ("rate=%.2f.qrels.txt" % rate)
-            self.fold_file = self.file_fn / ("rate=%.2f.fold.json" % rate)
+            self.qrel_file = self.file_fn / (f"{mode}.%.2f.qrels.txt" % rate)
+            self.fold_file = self.file_fn / (f"{mode}.%.2f.fold.json" % rate)
         assert all([f.exists() for f in [
             self.unsampled_qrel_file, self.unsampled_fold_file, self.qrel_file, self.fold_file]])
 
@@ -52,14 +52,20 @@ class SampleMixin:
 class SampledRobust04(Robust04Yang19, SampleMixin):
     module_name = "sampled_rob04.title"
     file_fn = DATA_PATH / module_name
-    config_spec = [ConfigOption("rate", 1.0, "sampling rate: fraction number between 0 to 1")]
+    config_spec = [
+        ConfigOption("rate", 1.0, "sampling rate: fraction number between 0 to 1"),
+        ConfigOption("mode", "deep", "sampling mode: sample along queries or documents"),
+    ]
 
 
 @Benchmark.register
 class SampledGOV2(GOV2Benchmark, SampleMixin):
     module_name = "sampled_gov2.title"
     file_fn = DATA_PATH / module_name
-    config_spec = [ConfigOption("rate", 1.0, "sampling rate: fraction number between 0 to 1")]
+    config_spec = [
+        ConfigOption("rate", 1.0, "sampling rate: fraction number between 0 to 1"),
+        ConfigOption("mode", "deep", "sampling mode: sample along queries or documents"),
+    ]
 
 
 @Benchmark.register

@@ -34,7 +34,6 @@ class GovSearcher(BM25):
     ]
 
     def _query_from_file(self, topicsfn, output_path, config):
-        print(config)
         done_fn = output_path / "done"
         if done_fn.exists():
             return output_path
